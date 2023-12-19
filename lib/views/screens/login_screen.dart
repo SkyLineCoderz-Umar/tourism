@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:get/get.dart';
 import 'package:tourism/helpers/colors.dart';
+import 'package:tourism/views/screens/home.dart';
 import 'package:tourism/views/screens/singup_screen.dart';
 import 'package:tourism/widgets/custom_button.dart';
 import 'package:tourism/widgets/custom_small_text.dart';
@@ -98,7 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: AppColor,
                       textcolor: Colors.white,
                       height: 55,
-                      ontap: () {}),
+                      ontap: () {
+                        Get.to(HomeScreen());
+                      }),
                   SizedBox(
                     height: 3.h,
                   ),
@@ -148,7 +151,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                     SmallText(text: "Don’t have an account", color: Colors.grey,fontWeight: FontWeight.w600,fontsize: 20,),
                      VerticalDivider(),
-                    TextButton(onPressed: (){}, child: Text("Singup",style: TextStyle(color: AppColor),))
+                    TextButton(onPressed: (){
+                      Get.to(SignUpScreen());
+                    }, child: Text("Singup",style: TextStyle(color: AppColor),))
         
                   ],)
                 ],

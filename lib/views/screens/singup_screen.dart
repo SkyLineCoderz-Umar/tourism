@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:get/get.dart';
+import 'package:tourism/views/screens/home.dart';
 
 import '../../helpers/colors.dart';
 import '../../widgets/custom_button.dart';
@@ -92,23 +93,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     height: 55,
                     suffixicon: Icons.remove_red_eye_outlined, textInputType: TextInputType.visiblePassword,
                   ),
-                  Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                          onPressed: () {Get.to(ForgotPassword());},
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(color: Colors.black),
-                          ))),
+                  // Align(
+                  //     alignment: Alignment.centerRight,
+                  //     child: TextButton(
+                  //         onPressed: () {Get.to(ForgotPassword());},
+                  //         child: Text(
+                  //           "Forgot Password?",
+                  //           style: TextStyle(color: Colors.black),
+                  //         ))),
                   SizedBox(
                     height: 2.h,
                   ),
                   CustomButton(
-                      text: "Login",
+                      text: "Sign up",
                       color: AppColor,
                       textcolor: Colors.white,
                       height: 55,
-                      ontap: () {}),
+                      ontap: () {
+                        Get.to(HomeScreen());
+                      }),
         
         
                   SizedBox(
@@ -141,7 +144,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       SmallText(text: "Don’t have an account", color: Colors.grey,fontWeight: FontWeight.w600,fontsize: 20,),
                       VerticalDivider(),
-                      TextButton(onPressed: (){}, child: Text("Login",style: TextStyle(color: AppColor),))
+                      TextButton(onPressed: (){
+                        Get.back();
+                      }, child: Text("Login",style: TextStyle(color: AppColor),))
         
                     ],)
                 ],
